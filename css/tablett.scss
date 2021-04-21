@@ -1,0 +1,28 @@
+/*header*/
+header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    height: 150px;
+}
+.logo {
+    height: 100px;
+}
+
+/*end header*/
+#teddy_list {
+    grid-template-rows: repeat(5, 150px);
+    row-gap: 20px;
+    figure {
+        figcaption {
+            h2 {
+                font-size: 1.5rem;
+            }
+            .paragraph {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+.p_plus {
+    font-size: 0.8rem;
+}

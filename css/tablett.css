@@ -1,0 +1,30 @@
+/*header*/
+header {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  height: 150px;
+}
+
+.logo {
+  height: 100px;
+}
+
+/*end header*/
+#teddy_list {
+  -ms-grid-rows: (150px)[5];
+      grid-template-rows: repeat(5, 150px);
+  row-gap: 20px;
+}
+
+#teddy_list figure figcaption h2 {
+  font-size: 1.5rem;
+}
+
+#teddy_list figure figcaption .paragraph {
+  font-size: 1rem;
+}
+
+.p_plus {
+  font-size: 0.8rem;
+}
+/*# sourceMappingURL=tablett.css.map */

@@ -1,0 +1,63 @@
+/*header*/
+header {
+  max-height: 200px;
+  margin: 0 15% 20px 15%;
+}
+
+.ul_header {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+}
+
+.li_logo {
+  text-align: left;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.logo {
+  margin-left: 15%;
+  max-width: 450px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.li_accueil,
+.li_panier {
+  width: 18%;
+  padding-top: 10px;
+  font-size: 1.8rem;
+}
+
+/*fin header*/
+/*product*/
+#page_teddy {
+  margin: 0 15%;
+}
+
+#page_teddy figure {
+  padding: 0 5%;
+}
+
+#page_teddy figure h2 {
+  font-size: 3rem;
+}
+
+#page_teddy figure img {
+  width: 55%;
+}
+
+#page_teddy figure .description {
+  font-size: 1rem;
+}
+
+#page_teddy figure select {
+  font-size: 1rem;
+  padding: 4px;
+}
+
+/*end product*/
+/*# sourceMappingURL=desktop_product.css.map */

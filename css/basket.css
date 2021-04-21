@@ -1,0 +1,311 @@
+* {
+  font-family: roboto;
+}
+
+body {
+  background-color: white;
+  padding: 5px 10px;
+}
+
+li {
+  text-decoration: none;
+  list-style-type: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/*header*/
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #f3e9ff;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.ul_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  width: 100%;
+  background-color: #f3e9ff;
+  padding: 0;
+  border-radius: 15px;
+}
+
+.logo {
+  margin: auto;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+
+.li_logo {
+  width: 100%;
+  text-align: center;
+}
+
+.li_accueil {
+  width: 50%;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.li_panier {
+  width: 50%;
+  text-align: center;
+}
+
+/*end header*/
+/*container*/
+#container {
+  background-color: #f3e9ff;
+  border-radius: 15px;
+}
+
+#container h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 10px 0;
+}
+
+#container section #suppress {
+  width: 50%;
+  text-align: center;
+  margin: 20px 25%;
+  border-radius: 15px;
+  font-size: 1rem;
+  border: 1px solid black;
+  background-color: #c8c4c4;
+}
+
+#container section h2 {
+  padding: 0 0 10px 20px;
+}
+
+#container section #summary {
+  text-align: center;
+}
+
+#container section table {
+  width: 90%;
+  margin: auto;
+  font-size: 0.8rem;
+  border-spacing: 5px;
+  text-align: left;
+}
+
+#container section table th,
+#container section table td {
+  border: 1px solid #8f5bfe;
+}
+
+#container section table .name_teddy {
+  padding-left: 15px;
+}
+
+#container section table .quantity {
+  text-align: center;
+}
+
+#container section table .price_teddy {
+  text-align: right;
+}
+
+#container section table .totalArticle {
+  text-align: right;
+}
+
+#container section table thead {
+  text-align: left;
+}
+
+#container section table thead .first_row {
+  vertical-align: top;
+}
+
+#container section table tfoot {
+  font-weight: bold;
+}
+
+#container section table tfoot .subtotal,
+#container section table tfoot .expedition_price {
+  font-weight: bold;
+  text-align: right;
+}
+
+#container section table tfoot .total {
+  vertical-align: bottom;
+}
+
+#container section table tfoot .total .th_total {
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+#container section table tfoot .total .collapse {
+  text-align: right;
+  font-weight: bold;
+}
+
+#container .form {
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#container .form p {
+  font-size: 0.8rem;
+}
+
+#container .form h2 {
+  padding: 20px 0 0px 0;
+  font-size: 1.2rem;
+}
+
+#container .form .identity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 20px 0 20px;
+}
+
+#container .form .identity input {
+  width: 100%;
+  border: 1px solid black;
+  padding-left: 5px;
+}
+
+#container .form .identity .name #no-name {
+  width: 80%;
+  height: 50%;
+  left: 0;
+  padding-left: 5px;
+  display: none;
+}
+
+#container .form .identity .firstname #no_firstname {
+  display: none;
+  width: 80%;
+  height: 50%;
+  left: 0;
+  padding-left: 5px;
+}
+
+#container .form .adress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 20px 0 20px;
+}
+
+#container .form .adress input {
+  width: 100%;
+  border: 1px solid black;
+  padding-left: 5px;
+}
+
+#container .form .location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 20px 0 20px;
+}
+
+#container .form .location input {
+  width: 100%;
+  border: 1px solid black;
+  padding-left: 5px;
+}
+
+#container .form .phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 20px 0 20px;
+}
+
+#container .form .phone input {
+  width: 100%;
+  border: 1px solid black;
+  padding-left: 5px;
+}
+
+#container .form .mail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 20px 0 20px;
+}
+
+#container .form .mail input {
+  width: 100%;
+  border: 1px solid black;
+  margin-right: 20px;
+  padding-left: 5px;
+}
+
+#container .form #button {
+  width: 50%;
+  margin: 20px 25%;
+  border-radius: 15px;
+  font-size: 1rem;
+  border: 1px solid black;
+  background-color: #c8c4c4;
+}
+
+/*container*/
+/*# sourceMappingURL=basket.css.map */

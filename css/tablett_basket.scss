@@ -1,0 +1,79 @@
+/*header*/
+header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    height: 150px;
+}
+.logo {
+    height: 100px;
+}
+/*container*/
+#container {
+    font-size: 1.3rem;
+    h1 {
+        font-size: 2rem;
+    }
+    section {
+        h2 {
+            font-size: 1.5rem;
+        }
+        table {
+            font-size: 1.3rem;
+            margin: auto;
+            tfoot {
+                .total {
+                    .th_total {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+    .form {
+        p {
+            font-size: 1rem;
+            padding-left: 20px;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+        .identity {
+            display: flex;
+            flex-direction: row;
+
+            .name {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                input {
+                    width: 90%;
+                }
+            }
+            .firstname {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+            }
+        }
+        .location {
+            display: flex;
+            flex-direction: row;
+
+            .postcode {
+                display: flex;
+                flex-direction: column;
+                width: 35%;
+                input {
+                    width: 90%;
+                }
+            }
+            .city {
+                display: flex;
+                flex-direction: column;
+                width: 65%;
+            }
+        }
+    }
+}
+
+/*end container*/

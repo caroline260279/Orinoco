@@ -1,0 +1,80 @@
+/*header*/
+header {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  height: 150px;
+}
+
+.logo {
+  height: 100px;
+}
+
+/*end header*/
+/*product*/
+#page_teddy figure h2 {
+  font-size: 3rem;
+}
+
+#page_teddy figure .reference {
+  font-size: 1rem;
+  padding: 0 0 10px 10px;
+}
+
+#page_teddy figure .description {
+  font-size: 1.5rem;
+  padding: 15px 10px;
+}
+
+#page_teddy figure .selection {
+  height: 50px;
+}
+
+#page_teddy figure .selection select {
+  font-size: 1.5rem;
+  padding: 8px;
+}
+
+#page_teddy figure .selection #input_div {
+  position: relative;
+  width: 140px;
+  height: 40px;
+  margin: auto;
+  vertical-align: top;
+}
+
+#page_teddy figure .selection #input_div #count {
+  font-size: 1.5rem;
+  left: 40px;
+  width: 60px;
+  height: 40px;
+}
+
+#page_teddy figure .selection #input_div #lessButton {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+#page_teddy figure .selection #input_div #plusButton {
+  font-size: 1.5rem;
+  left: 100px;
+  width: 40px;
+  height: 40px;
+}
+
+#page_teddy figure .info #basket {
+  font-size: 1.3rem;
+  padding: 5px 12px;
+}
+
+#page_teddy figure .info #basket i {
+  font-size: 1.2rem;
+}
+
+#page_teddy figure .info .price {
+  font-size: 3rem;
+}
+
+/*end product*/
+/*# sourceMappingURL=tablett_product.css.map */

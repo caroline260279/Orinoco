@@ -1,0 +1,123 @@
+* {
+    font-family: roboto;
+}
+$primary: rgb(243, 233, 255);
+$secondary: rgba(143, 91, 254, 255);
+
+body {
+    background-color: white;
+    padding: 5px 10px;
+}
+li {
+    text-decoration: none;
+    list-style-type: none;
+    color: black;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/*header*/
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: $primary;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+.ul_header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 100%;
+    background-color: $primary;
+    padding: 0;
+    border-radius: 15px;
+}
+.logo {
+    margin: auto;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.li_logo {
+    width: 100%;
+    text-align: center;
+}
+.li_accueil {
+    width: 50%;
+    text-align: center;
+    padding-bottom: 5px;
+}
+.li_panier {
+    width: 50%;
+    text-align: center;
+}
+
+/*end header*/
+
+/*view page*/
+
+#teddy_list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 100px);
+    row-gap: 10px;
+
+    figure {
+        display: flex;
+        background-color: $primary;
+        box-shadow: 3px 3px 3px $secondary;
+        border-radius: 15px;
+        height: 100%;
+        position: relative;
+
+        img {
+            width: 30%;
+            min-width: 30%;
+            border-radius: 15px;
+            padding: 5px;
+            margin: 0;
+            object-fit: cover;
+        }
+        figcaption {
+            width: 70%;
+            max-width: 100%;
+            display: inline-block;
+            padding: 0 10px;
+
+            h2 {
+                font-size: 1rem;
+                padding-top: 5px;
+            }
+            .paragraph {
+                white-space: normal;
+                overflow-y: hidden;
+                text-align: justify;
+                font-size: 0.8rem;
+                padding-top: 4px;
+                max-height: 50%;
+            }
+        }
+    }
+}
+
+.p_plus {
+    text-align: right;
+    font-size: 0.6rem;
+    padding-right: 15px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+/*end view page*/

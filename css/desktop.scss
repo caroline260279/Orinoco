@@ -1,0 +1,38 @@
+/*header*/
+header {
+    max-height: 200px;
+    margin: 0 15% 20px 15%;
+}
+.ul_header {
+    flex-wrap: nowrap;
+    height: 100%;
+}
+.li_logo {
+    text-align: left;
+    flex-grow: 1;
+}
+.logo {
+    margin-left: 15%;
+    max-width: 450px;
+    height: 150px;
+    object-fit: cover;
+}
+.li_accueil,
+.li_panier {
+    width: 18%;
+    padding-top: 10px;
+    font-size: 1.8rem;
+}
+
+/*fin header*/
+#teddy_list {
+    grid-template-rows: repeat(5, 120px);
+    figure {
+        margin: 0 20%;
+        figcaption {
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}

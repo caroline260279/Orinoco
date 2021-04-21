@@ -1,0 +1,58 @@
+/*header*/
+header {
+    max-height: 200px;
+    margin: 0 0 20px 0;
+}
+.ul_header {
+    flex-wrap: nowrap;
+    height: 100%;
+}
+.li_logo {
+    text-align: left;
+    flex-grow: 1;
+}
+.logo {
+    margin-left: 15%;
+    max-width: 450px;
+    height: 150px;
+    object-fit: cover;
+}
+.li_accueil,
+.li_panier {
+    width: 18%;
+    padding-top: 10px;
+    font-size: 1.8rem;
+}
+
+/*fin header*/
+/*container*/
+
+#container {
+    margin: auto;
+
+    h1 {
+        display: block;
+        width: 100%;
+        padding: 30px 0;
+        font-size: 4rem;
+    }
+    section {
+        padding: 0 40px;
+        h2 {
+            padding: 0 40px 20px 40px;
+            font-size: 2.3rem;
+            text-align: center;
+        }
+        table{
+            width: 70%;
+        }
+    }
+    .form {
+        padding: 0 40px 20px 40px;
+        h2 {
+            padding: 0 40px 20px 40px;
+            font-size: 2.3rem;
+            text-align: center;
+        }
+    }
+}

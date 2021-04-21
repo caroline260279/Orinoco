@@ -1,0 +1,234 @@
+* {
+  font-family: roboto;
+}
+
+body {
+  background-color: white;
+  padding: 5px 10px;
+}
+
+li {
+  text-decoration: none;
+  list-style-type: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/*header*/
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #f3e9ff;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.ul_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  width: 100%;
+  background-color: #f3e9ff;
+  padding: 0;
+  border-radius: 15px;
+}
+
+.logo {
+  margin: auto;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+
+.li_logo {
+  width: 100%;
+  text-align: center;
+}
+
+.li_accueil {
+  width: 50%;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.li_panier {
+  width: 50%;
+  text-align: center;
+}
+
+/*end header*/
+/*product*/
+#page_teddy figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #f3e9ff;
+  -webkit-box-shadow: 6px 6px 6px #8f5bfe;
+          box-shadow: 6px 6px 6px #8f5bfe;
+  border-radius: 15px;
+}
+
+#page_teddy figure h2 {
+  padding: 10px 0 0 10px;
+  font-size: 2.5rem;
+}
+
+#page_teddy figure .reference {
+  font-size: 0.8rem;
+  padding: 0 0 5px 10px;
+}
+
+#page_teddy figure img {
+  width: 96%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: auto;
+  border-radius: 15px;
+}
+
+#page_teddy figure .description {
+  display: inline-block;
+  text-align: justify;
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+#page_teddy figure .selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+#page_teddy figure .selection select {
+  display: inline-block;
+  width: 60%;
+  margin: auto;
+  font-size: 1rem;
+  padding: 2px;
+  border-radius: 15px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#page_teddy figure .selection #color_select {
+  outline-style: none;
+}
+
+#page_teddy figure .selection #input_div {
+  position: relative;
+  width: 70px;
+  height: 30px;
+  margin: auto;
+  vertical-align: top;
+}
+
+#page_teddy figure .selection #input_div #count {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border: 1px solid black;
+}
+
+#page_teddy figure .selection #input_div #lessButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
+  border-radius: 15px 0 0 15px;
+  border: 1px solid black;
+}
+
+#page_teddy figure .selection #input_div #plusButton {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 20px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border-radius: 0 15px 15px 0;
+  border: 1px solid black;
+}
+
+#page_teddy figure .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+#page_teddy figure .info .price {
+  font-size: 2rem;
+  padding: 10px 0 10px 25px;
+}
+
+#page_teddy figure .info #basket {
+  background-color: white;
+  border: 1px solid black;
+  font-size: 1.2rem;
+  line-height: 28px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 15px;
+}
+
+#page_teddy figure .info #basket i {
+  font-size: 1rem;
+  padding: 5px;
+}
+
+/*end product*/
+/*# sourceMappingURL=style_product.css.map */
