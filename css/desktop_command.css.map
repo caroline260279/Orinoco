@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,cAAc;AACd,AACI,IADA,CACA,cAAc,CAAC;EACX,SAAS,EAAE,MAAM;CASpB;;AAXL,AAIY,IAJR,CACA,cAAc,CAEV,cAAc,CACV,SAAS,CAAC;EACN,SAAS,EAAE,GAAG;CAIjB;;AATb,AAMgB,IANZ,CACA,cAAc,CAEV,cAAc,CACV,SAAS,CAEL,EAAE,CAAC;EACC,SAAS,EAAE,MAAM;CACpB",
+    "sources": [
+        "desktop_command.scss"
+    ],
+    "names": [],
+    "file": "desktop_command.css"
+}

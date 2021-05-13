@@ -1,0 +1,13 @@
+/*fin header*/
+main #recap_command {
+  font-size: 1.8rem;
+}
+
+main #recap_command #details_teddy .li_teddy {
+  max-width: 30%;
+}
+
+main #recap_command #details_teddy .li_teddy h2 {
+  font-size: 1.2rem;
+}
+/*# sourceMappingURL=desktop_command.css.map */

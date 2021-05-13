@@ -42,7 +42,7 @@
                             <th>Total</th>
                         </tr>
                     </thead>
-                    <tbody id="tbody"></tbody>
+                    <tbody id="tbody" id="tbody_two"></tbody>
                     <tfoot id="tfoot"></tfoot>
                 </table>
                 <button id="suppress" type="button">vider le panier</button>
@@ -70,45 +70,62 @@
                         /><span id="no_firstname"></span>
                     </div>
                 </div>
-                <div class="adress">
+                <div class="address">
                     <label>Numéro et nom de rue <em>*</em></label>
-                    <input placeholder="13 Bd Dieu Lumière" type="text" />
-                    <span id="no-adress"></span>
+                    <input
+                        placeholder="13 Bd Dieu Lumière"
+                        id="address"
+                        type="text"
+                        required=""
+                    />
+                    <span id="no-address"></span>
                 </div>
                 <div class="location">
                     <div class="postcode">
                         <label>Code postal <em>*</em></label>
-                        <input placeholder="51100" type="text" />
+                        <input
+                            placeholder="51100"
+                            id="postcode"
+                            type="text"
+                            required=""
+                        />
                         <span id="no-postcode"></span>
                     </div>
                     <div class="city">
                         <label>Ville <em>*</em></label>
-                        <input placeholder="Reims" type="text" />
+                        <input
+                            id="city"
+                            placeholder="Reims"
+                            type="text"
+                            required=""
+                        />
                         <span id="no-city"></span>
                     </div>
                 </div>
                 <div class="phone">
                     <label for="telephone">Portable <em>*</em></label>
                     <input
-                        id="telephone"
+                        id="phone"
                         type="tel"
                         placeholder="06xxxxxxxx"
-                        pattern="06[0-9]{8}"
-                    /><span id="no-telephone"></span>
+                        required=""
+                    /><span id="no-phone"></span>
                 </div>
                 <div class="mail">
                     <label for="email">Adresse de messagerie <em>*</em></label>
                     <input
-                        id="email"
+                        id="mail"
                         type="email"
                         placeholder="caroline.prouve@orange.fr"
-                        required
-                    /><span id="no-email"></span>
+                        required=""
+                    /><span id="no-mail"></span>
                 </div>
-                <input id="button" type="button" value="envoyer" />
+                <button id="button" type="button">
+                    <Confirmer href="commande.html">Confirmer la commande</a>
+                </button>
             </form>
         </main>
-        <script src="javascript/js_basket.js" defer></script>
-        <script src="javascript/js_basket_form.js" defer></script>
+        <script src="javascript/newbasket.js" defer></script>
+        <script src="javascript/newform.js" defer></script>
     </body>
 </html>

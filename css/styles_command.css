@@ -24,6 +24,11 @@ ul {
   margin: 0;
 }
 
+span {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
 /*header*/
 header {
   display: -webkit-box;
@@ -85,68 +90,64 @@ header {
 }
 
 /*end header*/
-/*view page*/
-#teddy_list {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: (100px)[5];
-      grid-template-rows: repeat(5, 100px);
-  row-gap: 10px;
+/*container*/
+main {
+  background-color: #f3e9ff;
+  border-radius: 15px;
+  padding: 30px;
 }
 
-#teddy_list figure {
+main #recap_command {
+  background-color: #f3e9ff;
+  margin: auto;
+  padding: 20px 15px 15px 15px;
+  border: 1px solid #8f5bfe;
+  border-radius: 15px;
+  font-size: 1.2rem;
+}
+
+main #recap_command #command .thanks {
+  text-align: center;
+}
+
+main #recap_command #command .adress {
+  padding: 3px 0 10px 20px;
+}
+
+main #recap_command #command .reference {
+  padding: 10px 0;
+}
+
+main #recap_command #details_teddy {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #f3e9ff;
-  -webkit-box-shadow: 3px 3px 3px #8f5bfe;
-          box-shadow: 3px 3px 3px #8f5bfe;
-  border-radius: 15px;
-  height: 100%;
-  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-#teddy_list figure img {
-  width: 30%;
-  min-width: 30%;
-  border-radius: 15px;
-  padding: 5px;
-  margin: 0;
+main #recap_command #details_teddy .li_teddy {
+  max-width: 40%;
+  margin: 10px;
+}
+
+main #recap_command #details_teddy .li_teddy h2 {
+  font-size: 0.9rem;
+}
+
+main #recap_command #details_teddy .li_teddy .img_teddy {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  padding: 10px;
 }
 
-#teddy_list figure figcaption {
-  width: 70%;
-  max-width: 100%;
-  display: inline-block;
-  padding: 0 10px;
-}
-
-#teddy_list figure figcaption h2 {
-  font-size: 1rem;
-  padding-top: 5px;
-}
-
-#teddy_list figure figcaption .paragraph {
-  white-space: normal;
-  overflow-y: hidden;
-  text-align: justify;
-  font-size: 0.9rem;
-  padding-top: 4px;
-  max-height: 50%;
-}
-
-.p_plus {
-  text-align: right;
-  font-size: 0.6rem;
-  padding-right: 15px;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-}
-
-/*end view page*/
-/*# sourceMappingURL=styles.css.map */
+/*end container*/
+/*# sourceMappingURL=styles_command.css.map */

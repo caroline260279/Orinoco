@@ -45,7 +45,7 @@ ajax("http://localhost:3000/api/teddies/" + urlTeddy).then(function (response) {
 
                         <div id="input_div">
                         <button id="lessButton">-</button>
-                        <input value="1" id="count" readonly>
+                        <input type="text" value="1" id="count" readonly>
                         <button id="plusButton">+</button>
                         </div>
                     </div>
@@ -83,7 +83,7 @@ ajax("http://localhost:3000/api/teddies/" + urlTeddy).then(function (response) {
             count.setAttribute("value", valueCount.toString());
         }
     });
-    //écoute du bouton +
+    //écoute du bouton + pour incrémenter
 
     plusButton.addEventListener("click", function () {
         valueCount += 1;
@@ -94,58 +94,71 @@ ajax("http://localhost:3000/api/teddies/" + urlTeddy).then(function (response) {
 
     //ecoute du bouton ajouter au panier au clic
     button.addEventListener("click", function () {
+        //empecher la modification de l'input en modifiant le html dans l'inspecteur
+        let buttonValid = /^[1-9]{1}$/;
+        let attributValue = count.getAttribute("value");
         let localStorageProducts = localStorage.getItem("monPanier");
-        //si le panier n'est pas vide parser le panier
-        if (localStorageProducts !== "") {
-            localStorageProducts = JSON.parse(
-                localStorage.getItem("monPanier")
-            );
+        if (buttonValid.test(attributValue) == false) {
+            valueCount = 0;
+            count.setAttribute("value", valueCount.toString());
+        } else {
+            //si le panier n'est pas vide parser le panier
+            if (localStorageProducts !== "") {
+                localStorageProducts = JSON.parse(
+                    localStorage.getItem("monPanier")
+                );
 
-            //si le panier est vide, création d'un tableau vide pour y stocker les objets
-            if (localStorageProducts === null) {
+                //si le panier est vide, création d'un tableau vide pour y stocker les objets
+                if (localStorageProducts === null) {
+                    localStorageProducts = [];
+                }
+            }
+            //si le panier est vide, confirme avec un clear et cree le tableau vide
+            else {
+                localStorage.clear();
                 localStorageProducts = [];
             }
-        }
-        //si le panier est vide, confirme avec un clear et cree le tableau vide
-        else {
-            localStorage.clear();
-            localStorageProducts = [];
-        }
-        //creation de l'objet a pusher
-        let produitCommand = {
-            id: Result._id,
-            quantity: valueCount,
-        };
-
-        for (let j = 0; j < localStorageProducts.length; j++) {
-            console.log(localStorageProducts[j].id);
-            console.log(produitCommand.id);
-            if ((produitCommand.id === localStorageProducts[j].id) === true) {
-                console.log();
-                console.log("salut");
-                let numbertoadd = localStorageProducts[j].quantity;
-                let newvalueCount = numbertoadd + valueCount;
-                console.log(newvalueCount);
-                produitCommand = {
-                    id: Result._id,
-                    quantity: newvalueCount,
-                };
-                console.log(produitCommand);
-                console.log(localStorageProducts);
-                let index = localStorageProducts.findIndex(
-                    (x) => x.id === Result._id
-                );
-                console.log(index);
-                let newlocalStorageProducts = localStorageProducts.splice(
-                    index,
-                    1
-                );
-                console.log(newlocalStorageProducts);
-            } else {
-                console.log("ko");
+            //creation de l'objet a pusher
+            let produitCommand = {
+                id: Result._id,
+                quantity: valueCount,
+            };
+            console.log(localStorageProducts);
+            //boucle pour rechercher si le produit est deja dans le panier
+            for (let j = 0; j < localStorageProducts.length; j++) {
+                console.log(localStorageProducts[j].id);
+                console.log(produitCommand.id);
+                //si il est deja dans le panier
+                if (
+                    (produitCommand.id === localStorageProducts[j].id) ===
+                    true
+                ) {
+                    //alors on modifie la quantité en ajoutant la quantité voulue
+                    let numbertoadd = localStorageProducts[j].quantity;
+                    let newvalueCount = numbertoadd + valueCount;
+                    //modification de la variable produitCommand avec la nouvelle quantité
+                    produitCommand = {
+                        id: Result._id,
+                        quantity: newvalueCount,
+                    };
+                    //recherche de l'index du produit à remplacer
+                    let index = localStorageProducts.findIndex(
+                        (x) => x.id === Result._id
+                    );
+                    // nouveau local strorage avec la nouvelle quantité du teddy
+                    let newlocalStorageProducts = localStorageProducts.splice(
+                        index,
+                        1
+                    );
+                } else {
+                    console.log("ko");
+                }
             }
+            localStorageProducts.push(produitCommand);
+            localStorage.setItem(
+                "monPanier",
+                JSON.stringify(localStorageProducts)
+            );
         }
-        localStorageProducts.push(produitCommand);
-        localStorage.setItem("monPanier", JSON.stringify(localStorageProducts));
     });
 });

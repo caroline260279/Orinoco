@@ -1,7 +1,9 @@
 //selection du boutton par son id
 let formValid = document.getElementById("button");
+//création de la variable pour la validation du formulaire
+let error = 0;
 
-//crétioin des variables regex
+//création des variables regex
 
 //nom et prénom: lettres majuscules ou minuscules autorisées avec é, è, à, tiret et espace
 //de 3 à 15 caractères, insensible à la casse
@@ -39,46 +41,63 @@ let no_postcode = document.getElementById("no-postcode");
 let no_city = document.getElementById("no-city");
 let no_phone = document.getElementById("no-phone");
 let no_mail = document.getElementById("no-mail");
-
+//eventvalid = regex
+//event = 'input
+//no_event = display none
 //creation d'une fonction globale
-let validation_form = function (eventValid, event, no_event) {
+function Validation(eventValid, event, no_event) {
+    this.eventValid = eventValid;
+    this.event = event;
+    this.no_event = no_event;
     //vérification du remplissage du champ
-    if (event.validity.valueMissing) {
-        // console.log(event.validity.valueMissing);
-        no_event.textContent = "champ obligatoire";
-        no_event.style.color = "red";
-        no_event.style.display = "block";
-        return false;
-    }
-    //vérification du format de données
-    else if (eventValid.test(event.value) == false) {
-        //console.log(eventValid.test(event.value));
-        no_event.textContent = "format incorrect";
-        no_event.style.color = "orange";
-        no_event.style.display = "block";
-        return false;
-    }
-    //effacement du span
-    else if (
-        !event.validity.valueMissing == true &&
-        eventValid.test(event.value) == true
-    ) {
-        no_event.textContent = "";
-        return true;
-    }
-};
+    this.verification = function () {
+        if (event.validity.valueMissing) {
+            // console.log(event.validity.valueMissing);
+            no_event.textContent = "champ obligatoire";
+            no_event.style.color = "red";
+            no_event.style.display = "block";
+            error += 1;
+        }
+        //vérification du format de données
+        else if (eventValid.test(event.value) == false) {
+            //console.log(eventValid.test(event.value));
+            no_event.textContent = "format incorrect";
+            no_event.style.color = "orange";
+            no_event.style.display = "block";
+            error += 1;
+        }
+        //effacement du span
+        else if (
+            !event.validity.valueMissing == true &&
+            eventValid.test(event.value) == true
+        ) {
+            no_event.textContent = "";
+            return true;
+        }
+    };
+}
+let validation1 = new Validation(nameValid, name_formulaire, no_name);
+let validation2 = new Validation(nameValid, firstname, no_firstname);
+let validation3 = new Validation(addressValid, address, no_address);
+let validation4 = new Validation(postcodeValid, postcode, no_postcode);
+let validation5 = new Validation(cityValid, city, no_city);
+let validation6 = new Validation(phoneValid, phone, no_phone);
+let validation7 = new Validation(mailValid, mail, no_mail);
 
 function validation(event) {
+    validation1.verification();
+    validation2.verification();
+    validation3.verification();
+    validation4.verification();
+    validation5.verification();
+    validation6.verification();
+    validation7.verification();
     //si toutes les regex ne sont pas respectées, le formulaire n'est pas envoyé
-    if (
-        validation_form(nameValid, name_formulaire, no_name) === true &&
-        validation_form(nameValid, firstname, no_firstname) === true &&
-        validation_form(addressValid, address, no_address) === true &&
-        validation_form(postcodeValid, postcode, no_postcode) === true &&
-        validation_form(cityValid, city, no_city) === true &&
-        validation_form(phoneValid, phone, no_phone) === true &&
-        validation_form(mailValid, mail, no_mail) === true
-    ) {
+    if (error > 0) {
+        //remise de la variable à 0 sinon la fonction ne bascule jamais dans le else
+        error = 0;
+        event.preventDefault();
+    } else {
         //création des variables pour la récupération des valeurs des input
         let clientName = name_formulaire.value;
         let clientFirstname = firstname.value;
@@ -104,20 +123,11 @@ function validation(event) {
             clientCity,
             clientMail
         );
+        //push le client dans le tableau et stringify pour envoyer dans le local storage
         let myClientArray = [];
         myClientArray.push(myClient);
         localStorage.setItem("monClient", JSON.stringify(myClientArray));
-    } else {
-        //fonction validation pour afficher les inputs à modifier si besoin et bloquer la validation de la commande
-        validation_form(phoneValid, phone, no_phone);
-        validation_form(nameValid, name_formulaire, no_name);
-        validation_form(nameValid, firstname, no_firstname);
-        validation_form(addressValid, address, no_address);
-        validation_form(postcodeValid, postcode, no_postcode);
-        validation_form(cityValid, city, no_city);
-        validation_form(phoneValid, phone, no_phone);
-        validation_form(mailValid, mail, no_mail);
-        event.preventDefault();
+        document.location.href = "commande.html";
     }
 }
 

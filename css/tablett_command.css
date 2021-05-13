@@ -1,0 +1,29 @@
+span {
+  font-size: 1.5rem;
+}
+
+/*header*/
+header {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  height: 150px;
+}
+
+.logo {
+  height: 100px;
+}
+
+/*end header*/
+main #recap_command {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+main #recap_command #details_teddy .li_teddy {
+  max-width: 30%;
+}
+
+main #recap_command #details_teddy .li_teddy h2 {
+  font-size: 1.2rem;
+}
+/*# sourceMappingURL=tablett_command.css.map */
