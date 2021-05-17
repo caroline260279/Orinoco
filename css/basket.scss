@@ -103,37 +103,18 @@ header {
                 border: 1px solid $secondary;
             }
             .quantity {
-                .count_basket {
-                    width: 40px;
-                    padding: 0;
-                    margin: 0;
-                    text-align: center;
+                text-align: center;
+                margin: 5px;
+                vertical-align: middle;
+                .teddySupprim {
                     border: 1px solid black;
-                }
-                .lessButton_basket {
-                    width: 30px;
-                    height: 30px;
-                    line-height: 30px;
-                    padding: 0;
-                    margin: 0;
-                    border-radius: 15px 0 0 15px;
-                    border: 1px solid black;
-                }
-                .plusButton_basket {
-                    width: 30px;
-                    height: 30px;
-                    line-height: 30px;
-                    padding: 0;
-                    margin: 0;
-                    border-radius: 0 15px 15px 0;
-                    border: 1px solid black;
+                    border-radius: 15px;
+                    margin: 5px 5px 5px 20px;
+                    background-color: rgb(200, 196, 196);
                 }
             }
             .name_teddy {
                 padding-left: 15px;
-            }
-            .quantity {
-                text-align: center;
             }
             .price_teddy {
                 text-align: right;

@@ -22,7 +22,7 @@ let phoneValid = /^[0-9]{10}$/;
 //mail:minimum 2 lettres majuscules ou minuscules, chiffres de 0 à 9, point et tiret
 //puis @
 //puis puis minimum 2 lettres majuscules ou minuscules, chiffres de 0 à 9, point et tiret
-let mailValid = /^[A-Za-z0-9.-]{2,}@+[a-z0-9.-]{2,}$/i;
+let mailValid = /^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
 
 //selection des input
 let name_formulaire = document.getElementById("nom");
@@ -84,7 +84,7 @@ let validation5 = new Validation(cityValid, city, no_city);
 let validation6 = new Validation(phoneValid, phone, no_phone);
 let validation7 = new Validation(mailValid, mail, no_mail);
 
-function validation(event) {
+function order(event) {
     validation1.verification();
     validation2.verification();
     validation3.verification();
@@ -93,7 +93,7 @@ function validation(event) {
     validation6.verification();
     validation7.verification();
     //si toutes les regex ne sont pas respectées, le formulaire n'est pas envoyé
-    if (error > 0) {
+    if (error > 0 || localStoragecontenu === null) {
         //remise de la variable à 0 sinon la fonction ne bascule jamais dans le else
         error = 0;
         event.preventDefault();
@@ -133,4 +133,4 @@ function validation(event) {
 
 //validaton envoi du formulaire
 //création de l'évenement lorsque l'on clique sur le bouton avec la fonction validation
-formValid.addEventListener("click", validation);
+formValid.addEventListener("click", order);

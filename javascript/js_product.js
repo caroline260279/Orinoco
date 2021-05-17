@@ -21,8 +21,6 @@ let ajax = function (url) {
 
 //utilisation de la fonction ajax pour le teddy dont l'url contient l'id
 ajax("http://localhost:3000/api/teddies/" + urlTeddy).then(function (response) {
-    console.log("http://localhost:3000/api/teddies/" + urlTeddy);
-    let results = JSON.parse(response);
     let Result = JSON.parse(response);
 
     //création d'une variable pour le code à injecter
@@ -61,7 +59,6 @@ ajax("http://localhost:3000/api/teddies/" + urlTeddy).then(function (response) {
 
     //injection de la figure dans la page avec l'id
     let insert = document.getElementById("page_teddy");
-    console.log(insert);
     insert.innerHTML = card;
 
     //incrémentation/décrémentation au bouton + ou -
@@ -79,7 +76,6 @@ ajax("http://localhost:3000/api/teddies/" + urlTeddy).then(function (response) {
             //sinon enlever 1
         } else {
             valueCount -= 1;
-            console.log(valueCount);
             count.setAttribute("value", valueCount.toString());
         }
     });
@@ -123,11 +119,8 @@ ajax("http://localhost:3000/api/teddies/" + urlTeddy).then(function (response) {
                 id: Result._id,
                 quantity: valueCount,
             };
-            console.log(localStorageProducts);
             //boucle pour rechercher si le produit est deja dans le panier
             for (let j = 0; j < localStorageProducts.length; j++) {
-                console.log(localStorageProducts[j].id);
-                console.log(produitCommand.id);
                 //si il est deja dans le panier
                 if (
                     (produitCommand.id === localStorageProducts[j].id) ===

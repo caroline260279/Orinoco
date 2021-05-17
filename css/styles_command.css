@@ -139,6 +139,7 @@ main #recap_command #details_teddy .li_teddy {
 
 main #recap_command #details_teddy .li_teddy h2 {
   font-size: 0.9rem;
+  text-align: center;
 }
 
 main #recap_command #details_teddy .li_teddy .img_teddy {

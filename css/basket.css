@@ -130,40 +130,21 @@ header {
   border: 1px solid #8f5bfe;
 }
 
-#container section table .quantity .count_basket {
-  width: 40px;
-  padding: 0;
-  margin: 0;
+#container section table .quantity {
   text-align: center;
-  border: 1px solid black;
+  margin: 5px;
+  vertical-align: middle;
 }
 
-#container section table .quantity .lessButton_basket {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  padding: 0;
-  margin: 0;
-  border-radius: 15px 0 0 15px;
+#container section table .quantity .teddySupprim {
   border: 1px solid black;
-}
-
-#container section table .quantity .plusButton_basket {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  padding: 0;
-  margin: 0;
-  border-radius: 0 15px 15px 0;
-  border: 1px solid black;
+  border-radius: 15px;
+  margin: 5px 5px 5px 20px;
+  background-color: #c8c4c4;
 }
 
 #container section table .name_teddy {
   padding-left: 15px;
-}
-
-#container section table .quantity {
-  text-align: center;
 }
 
 #container section table .price_teddy {

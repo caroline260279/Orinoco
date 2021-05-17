@@ -25,23 +25,53 @@ if (localStoragecontenu === null) {
             let priceArticle = localStoragecontenu[i].quantity * data.price;
             //calcul du total avec l'itération si plusieurs ourson
             totalPrice += priceArticle;
-
             //html dynamique avec l'itération si plusieurs ourson
             htmlTbody += `
-                <tr>
+                <tr id="list_teddies">
                     <td class="name_teddy">${data.name}</td>
-                    <td class="quantity">                       
-${localStoragecontenu[i].quantity}
-
+                    <td class="quantity">${localStoragecontenu[i].quantity}
+                        <button class="teddySupprim">supprimer</button>
                     <td class="price_teddy">${data.price}</td>
                     <td class="totalArticle">${priceArticle}</td>
                 </tr>
             `;
-
             //insertion du code html
             let tbody = document.getElementById("tbody");
             tbody.innerHTML = htmlTbody;
-            let localStorageProducts = localStorage.getItem("monPanier");
+
+            let buttonSupprim = document.getElementsByClassName("teddySupprim");
+            //boucle pour le bouton supprimer
+            for (let j = 0; j < buttonSupprim.length; j++) {
+                let elementSupprim = buttonSupprim[j];
+                let index = localStoragecontenu.findIndex(
+                    (x) => x.id === localStoragecontenu[j].id
+                );
+                //création de la fonction pour supprimer le teddy correspondant au bouton
+                let fsupprim = function () {
+                    localStoragecontenu.splice(index, 1);
+                    localStorage.removeItem("monPanier");
+                    localStorage.setItem(
+                        "monPanier",
+                        JSON.stringify(localStoragecontenu)
+                    );
+                    //si le tableau ne contient plus de teddy, indiquer que le panier est vide
+                    if (localStoragecontenu.length === 0) {
+                        localStorage.clear();
+                        let summary = document.getElementById("summary");
+                        summary.innerHTML = "votre panier est vide";
+                        let table = document.getElementById("table");
+                        table.style.display = "none";
+                        let suppress = document.getElementById("suppress");
+                        suppress.style.display = "none";
+                    }
+                    //sinon mettre à jour la page pour mettre à jour le tableau
+                    else {
+                        window.location.reload();
+                    }
+                };
+                //écoute du bouton supprimer au clic
+                elementSupprim.addEventListener("click", fsupprim, fetchBasket);
+            }
 
             //html dynamique pour le total du tableau
             htmlTfoot = `
@@ -59,19 +89,14 @@ ${localStoragecontenu[i].quantity}
             let emptyButton = document.getElementById("suppress");
 
             //création de la fonction empty
-            console.log(localStoragecontenu);
             let empty = function () {
-                if (localStoragecontenu === "") {
-                    console.log(ok);
-                } else {
-                    localStorage.clear();
-                    let summary = document.getElementById("summary");
-                    summary.innerHTML = "votre panier est vide";
-                    let table = document.getElementById("table");
-                    table.style.display = "none";
-                    let suppress = document.getElementById("suppress");
-                    suppress.style.display = "none";
-                }
+                localStorage.clear();
+                let summary = document.getElementById("summary");
+                summary.innerHTML = "votre panier est vide";
+                let table = document.getElementById("table");
+                table.style.display = "none";
+                let suppress = document.getElementById("suppress");
+                suppress.style.display = "none";
             };
 
             //écoute du bouton au clic

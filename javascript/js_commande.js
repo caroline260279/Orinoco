@@ -5,17 +5,17 @@ for (i = 0; i < arrayTeddy.length; i++) {
     let idTeddy = arrayTeddy[i].id;
     products.push(idTeddy);
 }
-
+//variable parsée du panier et récupératin dans une variable des données client
 let clientArray = JSON.parse(localStorage.getItem("monClient"));
 let contact = clientArray[0];
-console.log(products);
-console.log(contact);
 
+//création des variables en dehors de la fonction pour le code html
 let refcommande = "";
 let refco_one = "";
 let refco_two = "";
 
-async function fetchBasket() {
+//fonction pour envoyer les données du panier et du formulaire et recevoir la réponse de l'API
+async function fetchCommand() {
     const response = await fetch("http://localhost:3000/api/teddies/order", {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -23,11 +23,12 @@ async function fetchBasket() {
     });
     //constante represantant les ids des teddies, la référence de commande et les coordonnées du client
     const data = await response.json();
-    console.log(data);
+
+    //création des variables afin d'avoir un code html modifiable selon les données
     let listProducts = data.products;
     let client = data.contact;
-    console.log(listProducts.name);
 
+    // création du code html à insérer
     refco_one = `
     <p class="thanks">Merci <span class="name">${client.firstName} ${client.lastName}</span>,</p>
     <p class="reference">Votre commande <span class="name">${data.orderId}</span> a été enregistrée</p>
@@ -38,25 +39,20 @@ async function fetchBasket() {
     ${client.city}</span></br></p>
     <p>contact:</p>
     <p class="adress"><span class="name">${client.email}</span></p>
-    <p>vos articles:</p>
-
-
-    `;
+    <p>vos articles:</p>`;
+    //création d'une boucle pour les teddies
     for (let j = 0; j < listProducts.length; j++) {
         refco_two += `<li class="li_teddy"><img class="img_teddy" src="${listProducts[j].imageUrl}" />
         <span class="name"><h2>${listProducts[j].name}</h2></span></li>`;
     }
 
     //insertion du code html
-
     let ref = document.getElementById("command");
     ref.innerHTML = refco_one;
     let ref_two = document.getElementById("details_teddy");
-    console.log(refco_two);
     ref_two.innerHTML = refco_two;
-    console.log(ref_two);
+
     return data;
 }
-
 //lancement de la fonction
-fetchBasket();
+fetchCommand();

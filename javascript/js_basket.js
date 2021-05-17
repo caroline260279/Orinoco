@@ -54,14 +54,11 @@ if (localStoragecontenu === null) {
             //les boutons "quantité"
             let lessButtonTeddy = document.getElementsByClassName("lessButton");
             let plusButtonTeddy = document.getElementsByClassName("plusButton");
-            let countButtonTeddy = document.getElementsByClassName(
-                "countButton"
-            );
+            let countButtonTeddy =
+                document.getElementsByClassName("countButton");
             let valueCountButtonTeddy = 0;
             let elementCount = "";
 
-            console.log(valueCountButtonTeddy);
-            console.log(elementCount);
             //création de la fonction pour décrémenter
             let fmoins = function () {
                 let produitCommand = "";
@@ -133,12 +130,9 @@ if (localStoragecontenu === null) {
                         let index = localStorageProducts.findIndex(
                             (x) => x.id === data._id
                         );
-                        console.log(index);
                         // nouveau local strorage avec la nouvelle quantité du teddy
-                        let newlocalStorageProducts = localStorageProducts.splice(
-                            index,
-                            1
-                        );
+                        let newlocalStorageProducts =
+                            localStorageProducts.splice(index, 1);
                     } else {
                         console.log("ko");
                     }
@@ -221,10 +215,8 @@ if (localStoragecontenu === null) {
                                 (x) => x.id === data._id
                             );
                             // nouveau local strorage avec la nouvelle quantité du teddy
-                            let newlocalStorageProducts = localStorageProducts.splice(
-                                index,
-                                1
-                            );
+                            let newlocalStorageProducts =
+                                localStorageProducts.splice(index, 1);
                         } else {
                             console.log("ko");
                         }

@@ -37,6 +37,10 @@ header {
   margin: auto;
 }
 
+#container section table .quantity .teddySupprim {
+  margin-left: 50px;
+}
+
 #container section table tfoot .total .th_total {
   font-size: 1.6rem;
 }
