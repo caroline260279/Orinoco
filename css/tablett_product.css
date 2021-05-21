@@ -11,6 +11,13 @@ header {
 
 /*end header*/
 /*product*/
+#page_teddy figure #okbasket {
+  font-size: 2rem;
+  top: 300px;
+  width: 70%;
+  margin: 0 15%;
+}
+
 #page_teddy figure h2 {
   font-size: 3rem;
 }
