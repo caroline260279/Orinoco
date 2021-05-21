@@ -4,20 +4,21 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/normalize.css" />
-        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/css/styles_command.css" />
         <link
             rel="stylesheet"
-            href="/css/tablett.css"
+            href="/css/tablett_command.css"
             media="screen and (min-width: 450px)"
         />
         <link
             rel="stylesheet"
-            href="/css/desktop.css"
+            href="/css/desktop_command.css"
             media="screen and (min-width: 960px)"
         />
-        <script src="/javascript/js_index.js" defer></script>
+        <script src="/javascript/js_commande.js" defer></script>
         <title>Orinoco</title>
     </head>
+
     <body>
         <header>
             <ul class="ul_header">
@@ -32,7 +33,12 @@
                 </li>
             </ul>
         </header>
+        <main>
+            <div id="recap_command">
+                <div id="command"></div>
 
-        <main id="teddy_list"></main>
+                <ul id="details_teddy"></ul>
+            </div>
+        </main>
     </body>
 </html>

@@ -18,8 +18,9 @@ ajax("http://localhost:3000/api/teddies").then(function (response) {
     //création d'une boucle pour récuperer les informations de chaque teddy
     for (let i = 0; i < results.length; i++) {
         //création du code html
+        console.log(results[i]._id);
         let cardOrigin = `
-        <a href="teddy.html?id=${results[i]._id}
+        <a href="/html/teddy.html?id=${results[i]._id}
         ">
         <figure>
             <img

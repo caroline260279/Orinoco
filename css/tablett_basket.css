@@ -38,7 +38,7 @@ header {
 }
 
 #container section table .quantity .teddySupprim {
-  margin-left: 50px;
+  margin: auto;
 }
 
 #container section table tfoot .total .th_total {
@@ -128,7 +128,7 @@ header {
 
 #container .form #button {
   width: 35%;
-  margin: 50px auto;
+  margin: 50px 32.5% 0 32.5%;
   font-size: 1.8rem;
 }
 

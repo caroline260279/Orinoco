@@ -9,6 +9,10 @@ for (i = 0; i < arrayTeddy.length; i++) {
 let clientArray = JSON.parse(localStorage.getItem("monClient"));
 let contact = clientArray[0];
 
+//variable pour le prix total
+let prixTotal = JSON.parse(localStorage.getItem("montant"));
+console.log(prixTotal[0]);
+
 //création des variables en dehors de la fonction pour le code html
 let refcommande = "";
 let refco_one = "";
@@ -31,7 +35,7 @@ async function fetchCommand() {
     // création du code html à insérer
     refco_one = `
     <p class="thanks">Merci <span class="name">${client.firstName} ${client.lastName}</span>,</p>
-    <p class="reference">Votre commande <span class="name">${data.orderId}</span> a été enregistrée</p>
+    <p class="reference">Votre commande <span class="name">${data.orderId}</span> a été enregistrée. Son montant total est de:<span class="name"> ${prixTotal[0]}.</span> </p>
     <p>adresse de livraison:</p>
     <p class="adress">
     <span class="name">${client.firstName} ${client.lastName}</br>

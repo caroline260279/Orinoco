@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/basket.css" />
+        <link
+            rel="stylesheet"
+            href="/css/tablett_basket.css"
+            media="screen and (min-width: 450px)"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/desktop_basket.css"
+            media="screen and (min-width: 960px)"
+        />
+        <script src="/javascript/newbasket.js" defer></script>
+        <script src="/javascript/newform.js" defer></script>
+        <title>Orinoco</title>
+    </head>
+
+    <body>
+        <header>
+            <ul class="ul_header">
+                <li class="li_logo">
+                    <img class="logo" src="/logo.png" alt="logo" />
+                </li>
+                <li class="li_accueil"><a href="../../index.html">accueil</a></li>
+                <li class="li_panier"><a href="/html/basket.html">panier</a></li>
+            </ul>
+        </header>
+        <main id="container">
+            <h1>Votre commande</h1>
+            <section>
+                <h2 id="recapsuppress">Récapitulatif</h2>
+                <p id="summary"></p>
+                <table id="table">
+                    <thead>
+                        <tr class="first_row">
+                            <th>Produit</th>
+                            <th>Quantité</th>
+                            <th>Prix</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody" id="tbody_two"></tbody>
+                    <tfoot id="tfoot"></tfoot>
+                </table>
+                <button id="suppress" type="button">vider le panier</button>
+            </section>
+            <form class="form" id="form" action="#">
+                <h2>Détails de facturation</h2>
+                <p>* champs obligatoires</p>
+                <div class="identity">
+                    <div class="name">
+                        <label for="nom">Nom <em>*</em></label>
+                        <input
+                            type="text"
+                            id="nom"
+                            placeholder="Prouve"
+                            required=""
+                        /><span id="no-name"></span>
+                    </div>
+                    <div class="firstname">
+                        <label for="nom">Prénom <em>*</em></label>
+                        <input
+                            type="text"
+                            id="firstname"
+                            placeholder="Caroline"
+                            required=""
+                        /><span id="no_firstname"></span>
+                    </div>
+                </div>
+                <div class="address">
+                    <label>Numéro et nom de rue <em>*</em></label>
+                    <input
+                        placeholder="13 Bd Dieu Lumière"
+                        id="address"
+                        type="text"
+                        required=""
+                    />
+                    <span id="no-address"></span>
+                </div>
+                <div class="location">
+                    <div class="postcode">
+                        <label>Code postal <em>*</em></label>
+                        <input
+                            placeholder="51100"
+                            id="postcode"
+                            type="text"
+                            required=""
+                        />
+                        <span id="no-postcode"></span>
+                    </div>
+                    <div class="city">
+                        <label>Ville <em>*</em></label>
+                        <input
+                            id="city"
+                            placeholder="Reims"
+                            type="text"
+                            required=""
+                        />
+                        <span id="no-city"></span>
+                    </div>
+                </div>
+                <div class="phone">
+                    <label for="telephone">Portable <em>*</em></label>
+                    <input
+                        id="phone"
+                        type="tel"
+                        placeholder="06xxxxxxxx"
+                        required=""
+                    /><span id="no-phone"></span>
+                </div>
+                <div class="mail">
+                    <label for="email">Adresse de messagerie <em>*</em></label>
+                    <input
+                        id="mail"
+                        type="email"
+                        placeholder="caroline.prouve@orange.fr"
+                        required=""
+                    /><span id="no-mail"></span>
+                </div>
+                <button id="button" type="button">
+                    <Confirmer href="html/commande.html">Confirmer la commande</a>
+                </button>
+            </form>
+        </main>
+
+    </body>
+</html>

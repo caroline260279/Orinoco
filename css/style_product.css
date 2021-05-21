@@ -98,6 +98,26 @@ header {
   -webkit-box-shadow: 6px 6px 6px #8f5bfe;
           box-shadow: 6px 6px 6px #8f5bfe;
   border-radius: 15px;
+  position: relative;
+}
+
+#page_teddy figure #okbasket {
+  display: none;
+  position: absolute;
+  top: 200px;
+  width: 80%;
+  margin: 0 10%;
+  font-size: 1rem;
+  border: 1px solid #8f5bfe;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #f3e9ff;
+}
+
+#page_teddy figure #okbasket #buttonokbasket {
+  border-radius: 15px;
+  width: 50px;
+  margin: 5px auto;
 }
 
 #page_teddy figure h2 {

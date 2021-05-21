@@ -1,7 +1,7 @@
 //création des variables hors de la boucle pour ne pas les réinitialiser à chaque fois
 let localStoragecontenu = JSON.parse(localStorage.getItem("monPanier"));
 let htmlTbody = "";
-let totalPrice = 0;
+let totalPriceNumber = 0;
 
 //
 if (localStoragecontenu === null) {
@@ -21,17 +21,35 @@ if (localStoragecontenu === null) {
             );
             //constante represantant les données des teddies
             const data = await response.json();
+            //création de la variable price qui représente le prix avec décimale pour les centimes et en euros
+            let nombre = data.price / 100;
+            let price = new Intl.NumberFormat("fr-FR", {
+                style: "currency",
+                currency: "EUR",
+            }).format(nombre);
             //variable pour le prix total de la ligne de chaque ourson
-            let priceArticle = localStoragecontenu[i].quantity * data.price;
+            priceArticle = new Intl.NumberFormat("fr-FR", {
+                style: "currency",
+                currency: "EUR",
+            }).format(localStoragecontenu[i].quantity * parseInt(price));
             //calcul du total avec l'itération si plusieurs ourson
-            totalPrice += priceArticle;
+            priceArticleNumber = parseInt(priceArticle);
+            totalPriceNumber += priceArticleNumber;
+            let totalPrice = new Intl.NumberFormat("fr-FR", {
+                style: "currency",
+                currency: "EUR",
+            }).format(totalPriceNumber);
+            //création de la variable myPrice et de la clé montant pour stocker le prix total dans le local storage
+            let myPrice = [];
+            myPrice.push(totalPrice);
+            localStorage.setItem("montant", JSON.stringify(myPrice));
             //html dynamique avec l'itération si plusieurs ourson
             htmlTbody += `
                 <tr id="list_teddies">
                     <td class="name_teddy">${data.name}</td>
                     <td class="quantity">${localStoragecontenu[i].quantity}
                         <button class="teddySupprim">supprimer</button>
-                    <td class="price_teddy">${data.price}</td>
+                    <td class="price_teddy">${price}</td>
                     <td class="totalArticle">${priceArticle}</td>
                 </tr>
             `;
@@ -63,6 +81,7 @@ if (localStoragecontenu === null) {
                         table.style.display = "none";
                         let suppress = document.getElementById("suppress");
                         suppress.style.display = "none";
+                        window.location.reload();
                     }
                     //sinon mettre à jour la page pour mettre à jour le tableau
                     else {
@@ -97,6 +116,7 @@ if (localStoragecontenu === null) {
                 table.style.display = "none";
                 let suppress = document.getElementById("suppress");
                 suppress.style.display = "none";
+                window.location.reload();
             };
 
             //écoute du bouton au clic

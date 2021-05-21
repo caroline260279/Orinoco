@@ -22,10 +22,17 @@ let ajax = function (url) {
 //utilisation de la fonction ajax pour le teddy dont l'url contient l'id
 ajax("http://localhost:3000/api/teddies/" + urlTeddy).then(function (response) {
     let Result = JSON.parse(response);
-
+    //création de la variable price qui représente le prix avec décimale pour les centimes et en euros
+    let nombre = Result.price / 100;
+    let price = new Intl.NumberFormat("fr-FR", {
+        style: "currency",
+        currency: "EUR",
+    }).format(nombre);
     //création d'une variable pour le code à injecter
-    let card = `       
+    let card = `  
                 <figure>
+                <div id="okbasket">Votre produit a été ajouté au panier</br>
+                <button id="buttonokbasket">ok</button></div>
                     <h2>${Result.name}</h2>
                     <img src="${Result.imageUrl}" alt="${Result.name}" />
                     <p class="description">${Result.description}</p>
@@ -47,9 +54,10 @@ ajax("http://localhost:3000/api/teddies/" + urlTeddy).then(function (response) {
                         <button id="plusButton">+</button>
                         </div>
                     </div>
-                        <div class="info">
-                        <p class="price">${Result.price}€</p>
-                        <button id="basket" href="basket.html"
+                    <div class="info">
+                    
+                        <p class="price">${price}</p>             
+                        <button id="basket" href="/html/basket.html"
                             ><i class="fas fa-shopping-cart"></i>ajouter au
                             panier</button></div>
                     </div>
@@ -152,6 +160,15 @@ ajax("http://localhost:3000/api/teddies/" + urlTeddy).then(function (response) {
                 "monPanier",
                 JSON.stringify(localStorageProducts)
             );
+            //apparition de la fenetre "produit ajouté"
+            let produitAjoute = document.getElementById("okbasket");
+            produitAjoute.style.display = "block";
         }
+    });
+    let okbutton = document.getElementById("buttonokbasket");
+    console.log(okbutton);
+    okbutton.addEventListener("click", function () {
+        let produitAjoutebis = document.getElementById("okbasket");
+        produitAjoutebis.style.display = "none";
     });
 });
