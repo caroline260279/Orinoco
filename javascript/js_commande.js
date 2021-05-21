@@ -56,6 +56,8 @@ async function fetchCommand() {
     let ref_two = document.getElementById("details_teddy");
     ref_two.innerHTML = refco_two;
 
+    localStorage.clear();
+
     return data;
 }
 //lancement de la fonction
